@@ -3,17 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Game Leaderboard</title>
+  <title>Control Europe Players Leaderboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-br from-gray-900 to-gray-800 text-white min-h-screen">
   <!-- Navbar -->
   <nav class="bg-gray-950 p-4 flex justify-between items-center shadow-lg">
-    <h1 class="text-xl font-bold">My Game Leaderboard</h1>
-    <div>
-      <a href="#" class="px-3">Home</a>
-      <a href="#" class="px-3">About</a>
-    </div>
+    <h1 class="text-xl font-bold">Control Europe Players Leaderboard</h1>
   </nav>
 
   <!-- Search Bar -->
@@ -21,7 +17,6 @@
     <select class="bg-gray-700 px-3 py-2 rounded-lg">
       <option>All</option>
       <option>Top 10</option>
-      <option>Friends</option>
     </select>
     <input type="text" placeholder="Search..." class="flex-grow bg-gray-700 px-3 py-2 rounded-lg">
     <button class="bg-blue-600 px-4 py-2 rounded-lg">Search</button>
@@ -29,6 +24,7 @@
 
   <!-- Leaderboard Cards -->
   <div class="max-w-4xl mx-auto mt-6 space-y-4">
+    <!-- 25 placeholder players -->
     <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg">
       <img src="https://via.placeholder.com/100" class="rounded-lg">
       <div>
@@ -41,6 +37,45 @@
       <div>
         <h2 class="text-lg font-bold">#2 - PlayerTwo</h2>
         <p class="text-gray-400">EXP: 120,000</p>
+      </div>
+    </div>
+
+    <!-- Add placeholders up to #25 -->
+    <!-- You can edit names/EXP later -->
+    <!-- Quick copy-paste template -->
+    <!-- Example: -->
+    <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg">
+      <img src="https://via.placeholder.com/100" class="rounded-lg">
+      <div>
+        <h2 class="text-lg font-bold">#3 - PlayerThree</h2>
+        <p class="text-gray-400">EXP: 100,000</p>
+      </div>
+    </div>
+
+    <!-- Placeholder loop -->
+    <!-- Repeat this block with #4 to #25 -->
+    <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg">
+      <img src="https://via.placeholder.com/100" class="rounded-lg">
+      <div>
+        <h2 class="text-lg font-bold">#4 - PlayerFour</h2>
+        <p class="text-gray-400">EXP: 90,000</p>
+      </div>
+    </div>
+    <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg">
+      <img src="https://via.placeholder.com/100" class="rounded-lg">
+      <div>
+        <h2 class="text-lg font-bold">#5 - PlayerFive</h2>
+        <p class="text-gray-400">EXP: 85,000</p>
+      </div>
+    </div>
+
+    <!-- Continue all the way to #25 -->
+    <!-- Example for the last one -->
+    <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg">
+      <img src="https://via.placeholder.com/100" class="rounded-lg">
+      <div>
+        <h2 class="text-lg font-bold">#25 - PlayerTwentyFive</h2>
+        <p class="text-gray-400">EXP: 10,000</p>
       </div>
     </div>
   </div>
