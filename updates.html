@@ -1,1 +1,52 @@
-update pages test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leaderboard Updates - Hoody's Control Europe</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: url("background.jpg.jpg") no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body class="text-white min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-950 p-4 flex justify-between items-center shadow-lg">
+    <h1 class="text-xl font-bold">Leaderboard Updates</h1>
+    <div class="space-x-4">
+      <a href="index.html" class="hover:text-blue-400">Back to Leaderboard</a>
+    </div>
+  </nav>
+
+  <!-- Updates Log -->
+  <div class="max-w-3xl mx-auto mt-8 space-y-6">
+
+    <!-- Example Update -->
+    <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
+      <h2 class="text-lg font-bold text-blue-400">September 17, 2025</h2>
+      <p class="text-gray-300">Added new players #26–30 to the leaderboard.</p>
+    </div>
+
+    <div class="bg-gray-800 p-4 rounded-xl shadow-lg">
+      <h2 class="text-lg font-bold text-blue-400">September 15, 2025</h2>
+      <p class="text-gray-300">Launched the leaderboard site with 25 players.</p>
+    </div>
+
+  </div>
+</body>
+</html>
