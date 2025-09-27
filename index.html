@@ -21,21 +21,30 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5); /* Adjust darkness here */
+      background: rgba(0, 0, 0, 0.5);
       z-index: -1;
+    }
+
+    /* 🔹 Card hover effect */
+    .player-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+    .player-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     }
   </style>
 </head>
 <body class="text-white min-h-screen">
   <!-- Navbar -->
-  <!-- Navbar -->
-<nav class="bg-gray-950 p-4 flex justify-between items-center shadow-lg">
-  <h1 class="text-xl font-bold">Hoody's Control Europe Leaderboard</h1>
-  <div class="space-x-4">
-    <a href="index.html" class="hover:text-blue-400">Leaderboard</a>
-    <a href="updates.html" class="hover:text-blue-400">Leaderboard Updates</a>
-  </div>
-</nav>
+  <nav class="bg-gray-950 p-4 flex justify-between items-center shadow-lg">
+    <h1 class="text-xl font-bold">Hoody's Control Europe Leaderboard</h1>
+    <div class="space-x-4">
+      <a href="index.html" class="hover:text-blue-400">Leaderboard</a>
+      <a href="updates.html" class="hover:text-blue-400">Leaderboard Updates</a>
+    </div>
+  </nav>
 
   <!-- Search Bar -->
   <div class="max-w-4xl mx-auto mt-6 flex gap-2">
@@ -51,31 +60,37 @@
   <div class="max-w-4xl mx-auto mt-6 space-y-4">
 
     <!-- Player #1 -->
-    <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg">
-      <img src="mattie.webp" class="rounded-lg w-32 h-20 object-cover">
-      <div>
-        <h2 class="text-lg font-bold">#1 - mattie</h2>
-        <p class="text-gray-400">Clan: Vangaurd </p>
+    <a href="player1.html">
+      <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg player-card">
+        <img src="mattie.webp" class="rounded-lg w-32 h-20 object-cover">
+        <div>
+          <h2 class="text-lg font-bold">#1 - mattie</h2>
+          <p class="text-gray-400">Clan: Vangaurd</p>
+        </div>
       </div>
-    </div>
+    </a>
 
     <!-- Player #2 -->
-    <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg">
-      <img src="rotgel.webp" class="rounded-lg w-32 h-20 object-cover">
-      <div>
-        <h2 class="text-lg font-bold">#2 - R0TGEL</h2>
-        <p class="text-gray-400">Clan: Pub </p>
+    <a href="player2.html">
+      <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg player-card">
+        <img src="rotgel.webp" class="rounded-lg w-32 h-20 object-cover">
+        <div>
+          <h2 class="text-lg font-bold">#2 - R0TGEL</h2>
+          <p class="text-gray-400">Clan: Pub</p>
+        </div>
       </div>
-    </div>
+    </a>
 
     <!-- Player #3 -->
-    <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg">
-      <img src="floppa.webp" class="rounded-lg w-32 h-20 object-cover">
-      <div>
-        <h2 class="text-lg font-bold">#3 - Floppa</h2>
-        <p class="text-gray-400">Clan: Vanguard </p>
+    <a href="player3.html">
+      <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg player-card">
+        <img src="floppa.webp" class="rounded-lg w-32 h-20 object-cover">
+        <div>
+          <h2 class="text-lg font-bold">#3 - Floppa</h2>
+          <p class="text-gray-400">Clan: Vanguard</p>
+        </div>
       </div>
-    </div>
+    </a>
 
     <!-- Player #4 -->
     <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg">
@@ -501,6 +516,7 @@
   </div>
 </body>
 </html>
+
 
 
 
