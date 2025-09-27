@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Hoody's Control Europe Players Leaderboard</title>
+  <title>Hoody's Control Europe Players Leaderboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     /* 🔹 Background Image */
@@ -29,66 +29,66 @@
     .player-card {
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
-      border: 2px solid white;  /* White outline around card */
+      border: 2px solid white; /* White outline */
     }
     .player-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      transform: scale(1.04);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
     }
   </style>
 </head>
 <body class="text-white min-h-screen">
   <!-- Navbar -->
-  <nav class="bg-gray-950 p-4 flex justify-between items-center shadow-lg">
-    <h1 class="text-xl font-bold">Hoody's Control Europe Leaderboard</h1>
-    <div class="space-x-4">
-      <a href="index.html" class="hover:text-blue-400">Leaderboard</a>
-      <a href="updates.html" class="hover:text-blue-400">Leaderboard Updates</a>
+  <nav class="bg-gray-950 p-6 flex justify-between items-center shadow-lg">
+    <h1 class="text-2xl font-bold">Hoody's Control Europe Leaderboard</h1>
+    <div class="space-x-6">
+      <a href="index.html" class="hover:text-blue-400 text-lg">Leaderboard</a>
+      <a href="updates.html" class="hover:text-blue-400 text-lg">Leaderboard Updates</a>
     </div>
   </nav>
 
   <!-- Search Bar -->
-  <div class="max-w-4xl mx-auto mt-6 flex gap-2">
-    <select class="bg-gray-700 px-3 py-2 rounded-lg">
+  <div class="max-w-5xl mx-auto mt-8 flex gap-3">
+    <select class="bg-gray-700 px-4 py-3 rounded-lg text-lg">
       <option>All</option>
       <option>Top 10</option>
     </select>
-    <input type="text" placeholder="Search..." class="flex-grow bg-gray-700 px-3 py-2 rounded-lg">
-    <button class="bg-blue-600 px-4 py-2 rounded-lg">Search</button>
+    <input type="text" placeholder="Search..." class="flex-grow bg-gray-700 px-4 py-3 rounded-lg text-lg">
+    <button class="bg-blue-600 px-6 py-3 rounded-lg text-lg">Search</button>
   </div>
 
   <!-- Leaderboard Cards -->
-  <div class="max-w-4xl mx-auto mt-6 space-y-9"> <!-- 🔹 Increased spacing between cards -->
+  <div class="max-w-5xl mx-auto mt-8 space-y-10"> <!-- bigger cards & spacing -->
 
     <!-- Player #1 -->
     <a href="player1.html">
-      <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg player-card">
-        <img src="mattie.webp" class="rounded-lg w-32 h-20 object-cover">
+      <div class="bg-gray-800 p-6 rounded-2xl flex items-center gap-6 shadow-xl player-card">
+        <img src="mattie.webp" class="rounded-lg w-48 h-32 object-cover">
         <div>
-          <h2 class="text-lg font-bold">#1 - mattie</h2>
-          <p class="text-gray-400">Clan: Vangaurd</p>
+          <h2 class="text-2xl font-bold">#1 - mattie</h2>
+          <p class="text-gray-300 text-lg">Clan: Vanguard</p>
         </div>
       </div>
     </a>
 
     <!-- Player #2 -->
     <a href="player2.html">
-      <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg player-card">
-        <img src="rotgel.webp" class="rounded-lg w-32 h-20 object-cover">
+      <div class="bg-gray-800 p-6 rounded-2xl flex items-center gap-6 shadow-xl player-card">
+        <img src="rotgel.webp" class="rounded-lg w-48 h-32 object-cover">
         <div>
-          <h2 class="text-lg font-bold">#2 - R0TGEL</h2>
-          <p class="text-gray-400">Clan: Pub</p>
+          <h2 class="text-2xl font-bold">#2 - R0TGEL</h2>
+          <p class="text-gray-300 text-lg">Clan: Pub</p>
         </div>
       </div>
     </a>
 
     <!-- Player #3 -->
     <a href="player3.html">
-      <div class="bg-gray-800 p-4 rounded-xl flex items-center gap-4 shadow-lg player-card">
-        <img src="floppa.webp" class="rounded-lg w-32 h-20 object-cover">
+      <div class="bg-gray-800 p-6 rounded-2xl flex items-center gap-6 shadow-xl player-card">
+        <img src="floppa.webp" class="rounded-lg w-48 h-32 object-cover">
         <div>
-          <h2 class="text-lg font-bold">#3 - Floppa</h2>
-          <p class="text-gray-400">Clan: Vanguard</p>
+          <h2 class="text-2xl font-bold">#3 - Floppa</h2>
+          <p class="text-gray-300 text-lg">Clan: Vanguard</p>
         </div>
       </div>
     </a>
@@ -517,6 +517,7 @@
   </div>
 </body>
 </html>
+
 
 
 
