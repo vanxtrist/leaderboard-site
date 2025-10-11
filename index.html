@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hoody's Control Europe Players Leaderboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
-    /* 🔹 Background Image */
     body {
-      background: url("background.jpg.jpg") no-repeat center center fixed;
+      background: url("Background.webp") no-repeat center center fixed;
       background-size: cover;
       position: relative;
     }
 
-    /* 🔹 Dark overlay so text stays readable */
     body::before {
       content: "";
       position: fixed;
@@ -25,18 +24,57 @@
       z-index: -1;
     }
 
-    /* 🔹 Card hover effect */
     .player-card {
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
-      border: 2px solid white; /* White outline */
+      border: 2px solid white;
+      max-width: 650px;
+      margin: 0 auto;
     }
+
     .player-card:hover {
       transform: scale(1.04);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Smooth moving gradient animation */
+    @keyframes textGradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .animated-rank {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      background-size: 300% 300%;
+      animation: textGradientMove 4s ease-in-out infinite;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
+    .gold-text {
+      background-image: linear-gradient(90deg, #ffd700, #fff8b3, #ffcc00, #ffd700);
+    }
+
+    .silver-text {
+      background-image: linear-gradient(90deg, #bfc1c2, #f5f5f5, #c0c0c0, #bfc1c2);
+    }
+
+    .bronze-text {
+      background-image: linear-gradient(90deg, #cd7f32, #ffb266, #c87a2a, #cd7f32);
     }
   </style>
 </head>
+
 <body class="text-white min-h-screen">
   <!-- Navbar -->
   <nav class="bg-gray-950 p-6 flex justify-between items-center shadow-lg">
@@ -53,45 +91,78 @@
       <option>All</option>
       <option>Top 10</option>
     </select>
-    <input type="text" placeholder="Search..." class="flex-grow bg-gray-700 px-4 py-3 rounded-lg text-lg">
+    <input
+      type="text"
+      placeholder="Search..."
+      class="flex-grow bg-gray-700 px-4 py-3 rounded-lg text-lg"
+    />
     <button class="bg-blue-600 px-6 py-3 rounded-lg text-lg">Search</button>
   </div>
 
   <!-- Leaderboard Cards -->
-  <div class="max-w-5xl mx-auto mt-8 space-y-10"> <!-- bigger cards & spacing -->
-
-    <!-- Player #1 -->
+  <div class="w-full flex flex-col items-center mt-8 space-y-6">
+    <!-- 🥇 Player #1 -->
     <a href="player1.html">
-      <div class="bg-gray-800 p-6 rounded-2xl flex items-center gap-6 shadow-xl player-card">
-        <img src="mattie.webp" class="rounded-lg w-48 h-32 object-cover">
+      <div
+        class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6"
+        style="background-color:#FFD700;"
+      >
+        <img src="mattie.webp" class="rounded-lg w-44 h-28 object-cover" />
         <div>
-          <h2 class="text-2xl font-bold">#1 - mattie</h2>
-          <p class="text-gray-300 text-lg">Clan: Vanguard</p>
+          <h2 class="text-xl animated-rank gold-text">1st - Mattie</h2>
+          <p class="text-black">Clan: Vanguard</p>
         </div>
       </div>
     </a>
 
-    <!-- Player #2 -->
+    <!-- 🥈 Player #2 -->
     <a href="player2.html">
-      <div class="bg-gray-800 p-6 rounded-2xl flex items-center gap-6 shadow-xl player-card">
-        <img src="rotgel.webp" class="rounded-lg w-48 h-32 object-cover">
+      <div
+        class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6"
+        style="background-color:#C0C0C0;"
+      >
+        <img src="rotgel.webp" class="rounded-lg w-44 h-28 object-cover" />
         <div>
-          <h2 class="text-2xl font-bold">#2 - R0TGEL</h2>
-          <p class="text-gray-300 text-lg">Clan: Pub</p>
+          <h2 class="text-xl animated-rank silver-text">2nd - Rotgel</h2>
+          <p class="text-black">Clan: Pub</p>
         </div>
       </div>
     </a>
 
-    <!-- Player #3 -->
+    <!-- 🥉 Player #3 -->
     <a href="player3.html">
-      <div class="bg-gray-800 p-6 rounded-2xl flex items-center gap-6 shadow-xl player-card">
-        <img src="floppa.webp" class="rounded-lg w-48 h-32 object-cover">
+      <div
+        class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6"
+        style="background-color:#CD7F32;"
+      >
+        <img src="Floppa.gif" class="rounded-lg w-44 h-28 object-cover" />
         <div>
-          <h2 class="text-2xl font-bold">#3 - Floppa</h2>
-          <p class="text-gray-300 text-lg">Clan: Vanguard</p>
+          <h2 class="text-xl animated-rank bronze-text">3rd - Floppa</h2>
+          <p class="text-black">Clan: Vanguard</p>
         </div>
       </div>
     </a>
+  </div>
+
+  <!-- Extended Player List and Toggle Button (Unchanged) -->
+  <button
+    onclick="toggleExtendedList()"
+    class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 my-4"
+  >
+    View Extended List
+  </button>
+
+  <div id="extendedList" class="hidden">
+    <!-- your existing players 4–50 here unchanged -->
+  </div>
+
+  <script>
+    function toggleExtendedList() {
+      document.getElementById("extendedList").classList.toggle("hidden");
+    }
+  </script>
+</body>
+</html>
 
 <!-- Player #4 -->
 <a href="player4.html">
@@ -629,6 +700,7 @@
     list.classList.toggle("hidden");
   }
 </script>
+
 
 
 
