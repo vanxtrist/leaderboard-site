@@ -1,69 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hoody's Control Europe Players Leaderboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
- <style>
-  body {
-    background: url("Background.webp") no-repeat center center fixed;
-    background-size: cover;
-    position: relative;
-  }
 
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: -1;
-  }
+  <style>
+    body {
+      background: url("Background.webp") no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
 
-  .player-card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
-    border: 2px solid white;
-    max-width: 650px; /* ✅ Keeps width compact */
-    margin: 0 auto;   /* ✅ Centers the cards */
-  }
-  .player-card:hover {
-    transform: scale(1.04);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-  }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
 
-  @keyframes textShimmer {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 200% 50%; }
-  }
+    .player-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+      border: 2px solid white;
+      max-width: 650px;
+      margin: 0 auto;
+    }
 
-  .animated-rank {
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-    animation: textShimmer 3s linear infinite;
-    font-weight: bold;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  }
+    .player-card:hover {
+      transform: scale(1.04);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    }
 
-  .gold-text {
-    background-image: linear-gradient(270deg, #ffd700, #fff8b3, #ffd700);
-  }
+    /* Smooth moving gradient animation */
+    @keyframes textGradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-  .silver-text {
-    background-image: linear-gradient(270deg, #c0c0c0, #f5f5f5, #c0c0c0);
-  }
+    .animated-rank {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      background-size: 300% 300%;
+      animation: textGradientMove 4s ease-in-out infinite;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
 
-  .bronze-text {
-    background-image: linear-gradient(270deg, #cd7f32, #ffb266, #cd7f32);
-  }
-</style>
+    .gold-text {
+      background-image: linear-gradient(90deg, #ffd700, #fff8b3, #ffcc00, #ffd700);
+    }
+
+    .silver-text {
+      background-image: linear-gradient(90deg, #bfc1c2, #f5f5f5, #c0c0c0, #bfc1c2);
+    }
+
+    .bronze-text {
+      background-image: linear-gradient(90deg, #cd7f32, #ffb266, #c87a2a, #cd7f32);
+    }
+  </style>
 </head>
+
 <body class="text-white min-h-screen">
   <!-- Navbar -->
   <nav class="bg-gray-950 p-6 flex justify-between items-center shadow-lg">
@@ -80,17 +91,23 @@
       <option>All</option>
       <option>Top 10</option>
     </select>
-    <input type="text" placeholder="Search..." class="flex-grow bg-gray-700 px-4 py-3 rounded-lg text-lg">
+    <input
+      type="text"
+      placeholder="Search..."
+      class="flex-grow bg-gray-700 px-4 py-3 rounded-lg text-lg"
+    />
     <button class="bg-blue-600 px-6 py-3 rounded-lg text-lg">Search</button>
   </div>
 
   <!-- Leaderboard Cards -->
   <div class="w-full flex flex-col items-center mt-8 space-y-6">
-
-    <!-- 🥇 Player #1 (Gold) -->
+    <!-- 🥇 Player #1 -->
     <a href="player1.html">
-      <div class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6" style="background-color:#FFD700;">
-        <img src="mattie.webp" class="rounded-lg w-44 h-28 object-cover">
+      <div
+        class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6"
+        style="background-color:#FFD700;"
+      >
+        <img src="mattie.webp" class="rounded-lg w-44 h-28 object-cover" />
         <div>
           <h2 class="text-xl animated-rank gold-text">1st - Mattie</h2>
           <p class="text-black">Clan: Vanguard</p>
@@ -98,10 +115,13 @@
       </div>
     </a>
 
-    <!-- 🥈 Player #2 (Silver) -->
+    <!-- 🥈 Player #2 -->
     <a href="player2.html">
-      <div class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6" style="background-color:#C0C0C0;">
-        <img src="rotgel.webp" class="rounded-lg w-44 h-28 object-cover">
+      <div
+        class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6"
+        style="background-color:#C0C0C0;"
+      >
+        <img src="rotgel.webp" class="rounded-lg w-44 h-28 object-cover" />
         <div>
           <h2 class="text-xl animated-rank silver-text">2nd - Rotgel</h2>
           <p class="text-black">Clan: Pub</p>
@@ -109,20 +129,20 @@
       </div>
     </a>
 
-    <!-- 🥉 Player #3 (Bronze) -->
+    <!-- 🥉 Player #3 -->
     <a href="player3.html">
-      <div class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6" style="background-color:#CD7F32;">
-        <img src="Floppa.gif" class="rounded-lg w-44 h-28 object-cover">
+      <div
+        class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6"
+        style="background-color:#CD7F32;"
+      >
+        <img src="Floppa.gif" class="rounded-lg w-44 h-28 object-cover" />
         <div>
           <h2 class="text-xl animated-rank bronze-text">3rd - Floppa</h2>
           <p class="text-black">Clan: Vanguard</p>
         </div>
       </div>
     </a>
-
   </div>
-</body>
-</html>
 
 <!-- Player #4 -->
 <a href="player4.html">
@@ -660,6 +680,7 @@
     list.classList.toggle("hidden");
   }
 </script>
+
 
 
 
