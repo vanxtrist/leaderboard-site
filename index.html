@@ -35,6 +35,35 @@
       transform: scale(1.04);
       box-shadow: 0 10px 25px rgba(0,0,0,0.6);
     }
+
+    /* === ✨ Animated Gradient Text for Top 3 === */
+    @keyframes textShimmer {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    .animated-rank {
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 200%;
+      animation: textShimmer 3s linear infinite;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(255,255,255,0.3);
+    }
+
+    .gold-text {
+      background-image: linear-gradient(270deg, #ffd700, #fff8b3, #ffd700);
+    }
+
+    .silver-text {
+      background-image: linear-gradient(270deg, #c0c0c0, #f5f5f5, #c0c0c0);
+    }
+
+    .bronze-text {
+      background-image: linear-gradient(270deg, #cd7f32, #ffb266, #cd7f32);
+    }
   </style>
 </head>
 <body class="text-white min-h-screen">
@@ -58,41 +87,44 @@
   </div>
 
   <!-- Leaderboard Cards -->
-  <div class="max-w-5xl mx-auto mt-8 space-y-15"> <!-- bigger cards & spacing -->
+  <div class="max-w-5xl mx-auto mt-8 space-y-15">
 
+    <!-- 🥇 Player #1 (Gold) -->
+    <a href="player1.html">
+      <div class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6" style="background-color:#FFD700;">
+        <img src="mattie.webp" class="rounded-lg w-44 h-28 object-cover">
+        <div>
+          <h2 class="text-xl animated-rank gold-text">1st - Mattie</h2>
+          <p class="text-black">Clan: Vanguard</p>
+        </div>
+      </div>
+    </a>
 
-<!-- Player #1 (Gold) -->
-<a href="player1.html">
-  <div class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6" style="background-color:#FFD700;">
-    <img src="mattie.webp" class="rounded-lg w-44 h-28 object-cover">
-    <div>
-      <h2 class="text-xl font-bold text-black">1st - Mattie</h2>
-      <p class="text-black">Clan: Vanguard</p>
-    </div>
+    <!-- 🥈 Player #2 (Silver) -->
+    <a href="player2.html">
+      <div class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6" style="background-color:#C0C0C0;">
+        <img src="rotgel.webp" class="rounded-lg w-44 h-28 object-cover">
+        <div>
+          <h2 class="text-xl animated-rank silver-text">2nd - Rotgel</h2>
+          <p class="text-black">Clan: Pub</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- 🥉 Player #3 (Bronze) -->
+    <a href="player3.html">
+      <div class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6" style="background-color:#CD7F32;">
+        <img src="Floppa.gif" class="rounded-lg w-44 h-28 object-cover">
+        <div>
+          <h2 class="text-xl animated-rank bronze-text">3rd - Floppa</h2>
+          <p class="text-black">Clan: Vanguard</p>
+        </div>
+      </div>
+    </a>
+
   </div>
-</a>
-
-<!-- Player #2 (Silver) -->
-<a href="player2.html">
-  <div class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6" style="background-color:#C0C0C0;">
-    <img src="rotgel.webp" class="rounded-lg w-44 h-28 object-cover">
-    <div>
-      <h2 class="text-xl font-bold text-black">2nd - Rotgel</h2>
-      <p class="text-black">Clan: Pub</p>
-    </div>
-  </div>
-</a>
-
-<!-- Player #3 (Bronze) -->
-<a href="player3.html">
-  <div class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6" style="background-color:#CD7F32;">
-    <img src="Floppa.gif" class="rounded-lg w-44 h-28 object-cover">
-    <div>
-      <h2 class="text-xl font-bold text-black">3rd - Floppa</h2>
-      <p class="text-black">Clan: Vanguard</p>
-    </div>
-  </div>
-</a>
+</body>
+</html>
 
 <!-- Player #4 -->
 <a href="player4.html">
@@ -630,6 +662,7 @@
     list.classList.toggle("hidden");
   }
 </script>
+
 
 
 
