@@ -62,38 +62,56 @@
   <!-- Leaderboard Cards -->
   <div class="max-w-5xl mx-auto mt-8 space-y-15">
 
-    <!-- Player #1 (Gold) -->
-    <a href="player1.html">
-      <div class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6" style="background-color:#FFD700;">
-        <img src="mattie.webp" class="rounded-lg w-44 h-28 object-cover">
-        <div>
-          <h2 class="text-xl font-bold text-black">1st - Mattie</h2>
-          <p class="text-black">Clan: Vanguard</p>
-        </div>
-      </div>
-    </a>
+  <!-- Player #1 (Gold) -->
+<div class="p-5 rounded-2xl flex flex-col gap-3 shadow-xl player-card mb-6 relative" style="background-color:#FFD700;">
+  <div class="flex items-center gap-5">
+    <img src="mattie.webp" class="rounded-lg w-44 h-28 object-cover">
+    <div class="flex-grow">
+      <h2 class="text-xl font-bold text-black flex items-center justify-between">
+        1st - Mattie
+        <button class="text-black text-2xl hover:text-gray-800 desc-btn" data-player="1">⋮</button>
+      </h2>
+      <p class="text-black">Clan: Vanguard</p>
+    </div>
+  </div>
+  <div id="desc-1" class="player-desc hidden bg-black/80 text-white p-3 rounded-lg absolute top-full left-5 w-[90%] mt-2 shadow-lg opacity-0 translate-y-2 transition-all duration-300">
+    Mattie reigns supreme — unmatched reaction speed, perfect map control, and zero losses this season.
+  </div>
+</div>
 
-    <!-- Player #2 (Silver) -->
-    <a href="player2.html">
-      <div class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6" style="background-color:#C0C0C0;">
-        <img src="Floppa.gif" class="rounded-lg w-44 h-28 object-cover">
-        <div>
-          <h2 class="text-xl font-bold text-black">2nd - Floppa</h2>
-          <p class="text-black">Clan: Vanguard</p>
-        </div>
-      </div>
-    </a>
+<!-- Player #2 (Silver) -->
+<div class="p-5 rounded-2xl flex flex-col gap-3 shadow-xl player-card mb-6 relative" style="background-color:#C0C0C0;">
+  <div class="flex items-center gap-5">
+    <img src="Floppa.gif" class="rounded-lg w-44 h-28 object-cover">
+    <div class="flex-grow">
+      <h2 class="text-xl font-bold text-black flex items-center justify-between">
+        2nd - Floppa
+        <button class="text-black text-2xl hover:text-gray-800 desc-btn" data-player="2">⋮</button>
+      </h2>
+      <p class="text-black">Clan: Vanguard</p>
+    </div>
+  </div>
+  <div id="desc-2" class="player-desc hidden bg-black/80 text-white p-3 rounded-lg absolute top-full left-5 w-[90%] mt-2 shadow-lg opacity-0 translate-y-2 transition-all duration-300">
+    Floppa’s creative plays and unpredictable style make him a true wild card and a constant threat to Mattie’s throne.
+  </div>
+</div>
 
-    <!-- Player #3 (Bronze) -->
-    <a href="player3.html">
-      <div class="p-5 rounded-2xl flex items-center gap-5 shadow-xl player-card mb-6" style="background-color:#CD7F32;">
-        <img src="hoody.webp" class="rounded-lg w-44 h-28 object-cover">
-        <div>
-          <h2 class="text-xl font-bold text-black">3rd - Hoody</h2>
-          <p class="text-black">Clan: Vanguard</p>
-        </div>
-      </div>
-    </a>
+<!-- Player #3 (Bronze) -->
+<div class="p-5 rounded-2xl flex flex-col gap-3 shadow-xl player-card mb-6 relative" style="background-color:#CD7F32;">
+  <div class="flex items-center gap-5">
+    <img src="hoody.webp" class="rounded-lg w-44 h-28 object-cover">
+    <div class="flex-grow">
+      <h2 class="text-xl font-bold text-black flex items-center justify-between">
+        3rd - Hoody
+        <button class="text-black text-2xl hover:text-gray-800 desc-btn" data-player="3">⋮</button>
+      </h2>
+      <p class="text-black">Clan: Vanguard</p>
+    </div>
+  </div>
+  <div id="desc-3" class="player-desc hidden bg-black/80 text-white p-3 rounded-lg absolute top-full left-5 w-[90%] mt-2 shadow-lg opacity-0 translate-y-2 transition-all duration-300">
+    Hoody — the creator and visionary of Control Europe — dominates with strategy and leadership, not just raw skill.
+  </div>
+</div>
 
   
 <!-- Player #4 -->
@@ -633,44 +651,47 @@
   }
 </script>
 
+<!-- Script for player descriptions -->
+<script>
+  document.querySelectorAll('.desc-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const playerId = btn.getAttribute('data-player');
+      const desc = document.getElementById(`desc-${playerId}`);
 
+      // Hide all other descriptions
+      document.querySelectorAll('.player-desc').forEach(d => {
+        if (d !== desc) {
+          d.classList.add('hidden');
+          d.classList.remove('opacity-100', 'translate-y-0');
+          d.classList.add('opacity-0', 'translate-y-2');
+        }
+      });
 
+      // Toggle this description
+      const isHidden = desc.classList.contains('hidden');
+      if (isHidden) {
+        desc.classList.remove('hidden');
+        setTimeout(() => {
+          desc.classList.remove('opacity-0', 'translate-y-2');
+          desc.classList.add('opacity-100', 'translate-y-0');
+        }, 10);
+      } else {
+        desc.classList.remove('opacity-100', 'translate-y-0');
+        desc.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => desc.classList.add('hidden'), 300);
+      }
+    });
+  });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // Hide all when clicking outside
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.player-desc').forEach(d => {
+      d.classList.remove('opacity-100', 'translate-y-0');
+      d.classList.add('opacity-0', 'translate-y-2');
+      setTimeout(() => d.classList.add('hidden'), 300);
+    });
+  });
+</script>
+</body>
+</html>
