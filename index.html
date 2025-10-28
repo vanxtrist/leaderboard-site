@@ -36,6 +36,15 @@
       transform: scale(1.04);
       box-shadow: 0 10px 25px rgba(0,0,0,0.6);
     }
+
+    .player-card {
+  position: relative;
+  overflow: visible; /* allow description to appear outside card */
+}
+
+.player-desc {
+  z-index: 50; /* make sure it appears above other cards */
+}
   </style>
 </head>
 <body class="text-white min-h-screen">
@@ -695,3 +704,4 @@
 </script>
 </body>
 </html>
+
